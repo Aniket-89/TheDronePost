@@ -1,10 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import HomePage from './pages/HomePage'
+import ComingSoonPage from './pages/ComingSoonPage'
+import './index.css';
+
 
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <HomePage />
+    <ComingSoonPage />
   </StrictMode>,
 )
