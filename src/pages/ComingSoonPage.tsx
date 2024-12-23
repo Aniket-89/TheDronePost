@@ -79,9 +79,7 @@ const ComingSoonPage = () => {
         <img
           src="./tdp.png"
           alt=""
-          width={228}
-          height={228}
-          className="md:size-[228px] size-[160px]"
+          className="md:w-[228px] w-[160px] aspect-[5/4] object-cover mb-6 bg-softWhite rounded-sm"
         />
         <h1 className="md:text-5xl text-3xl sm:text-4xl font-bold mb-4 ">
           We are Coming Soon!
