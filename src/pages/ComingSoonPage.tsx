@@ -8,6 +8,9 @@ const ComingSoonPage = () => {
     seconds: 0,
   });
 
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
   // Set launch date
   const launchDate = useMemo(() => new Date("2025-01-01T00:00:00"), []);
 
@@ -33,6 +36,35 @@ const ComingSoonPage = () => {
     return () => clearInterval(timer);
   }, [launchDate]);
 
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!email) {
+      setMessage("Please enter a valid email address.");
+      return;
+    }
+
+    try {
+      const response = await fetch("https://sheetdb.io/api/v1/8il6cfn5h3m0q", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, timestamp: new Date().toISOString() }),
+      });
+
+      if (response.ok) {
+        setMessage("Thank you! You’ll be notified soon.");
+        setEmail("");
+      } else {
+        setMessage("Oops! Something went wrong. Please try again.");
+      }
+    } catch (error: unknown) {
+      console.error(error);
+      setMessage("Error connecting to SheetsDB. Please try again later.");
+    }
+  };
+
   return (
     <div className="flex flex-col justify-center items-center relative h-screen w-full text-white p-2">
       <video
@@ -44,8 +76,16 @@ const ComingSoonPage = () => {
         className="absolute h-full w-full z-[-1] top-0 left-0 object-cover opacity-65"
       ></video>
       <div className="flex flex-col items-center p-6 bg-white/30 backdrop-blur-sm shadow-lg rounded-md">
-        <img src="./tdp.png" alt="" width={228} height={228} className="md:size-[228px] size-[160px]"/>
-        <h1 className="md:text-5xl text-3xl sm:text-4xl font-bold mb-4 ">We are Coming Soon!</h1>
+        <img
+          src="./tdp.png"
+          alt=""
+          width={228}
+          height={228}
+          className="md:size-[228px] size-[160px]"
+        />
+        <h1 className="md:text-5xl text-3xl sm:text-4xl font-bold mb-4 ">
+          We are Coming Soon!
+        </h1>
         <p className="text-lg mb-6 text-darkGray text-justify">
           We're working hard to bring you something amazing. Stay tuned!
         </p>
@@ -57,10 +97,15 @@ const ComingSoonPage = () => {
             </div>
           ))}
         </div>
-        <form className="flex flex-col sm:flex-row items-center gap-2 w-full justify-center">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col sm:flex-row items-center gap-2 w-full justify-center"
+        >
           <input
             type="email"
             placeholder="Enter your email to get notified"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="p-2 rounded-sm text-black sm:w-64 w-full"
           />
           <button
@@ -70,6 +115,7 @@ const ComingSoonPage = () => {
             Notify Me
           </button>
         </form>
+        {message && <p className="mt-4 text-sm">{message}</p>}
       </div>
     </div>
   );
