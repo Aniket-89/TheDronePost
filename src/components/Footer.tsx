@@ -13,8 +13,8 @@ const Footer = () => {
                 and information about drones, aviation technology, and robotics.
               </p>
               <div className="social-links">
-                <a href="https://linkedin.com/the-drone-post" className="social-link" aria-label="LinkedIn">
-                  <Facebook size={18} />
+                <a href="https://linkedin.com/company/the-drone-post" className="social-link" aria-label="LinkedIn">
+                  <Linkedin size={18} />
                 </a>
                 <a href="https://twitter.com" className="social-link" aria-label="Twitter">
                   <Twitter size={18} />
