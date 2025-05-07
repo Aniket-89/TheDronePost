@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Youtube, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -13,7 +13,7 @@ const Footer = () => {
                 and information about drones, aviation technology, and robotics.
               </p>
               <div className="social-links">
-                <a href="https://facebook.com" className="social-link" aria-label="Facebook">
+                <a href="https://linkedin.com/the-drone-post" className="social-link" aria-label="LinkedIn">
                   <Facebook size={18} />
                 </a>
                 <a href="https://twitter.com" className="social-link" aria-label="Twitter">
