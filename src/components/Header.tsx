@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Search, Menu, X } from 'lucide-react';
 import { categories } from '../data/mockData';
+import Logo_wide from '../assets/logo_wide.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,8 +50,8 @@ const Header = () => {
       <div className="header-container">
         <div className="logo-container">
           <a href="/" className="logo">
-            <span className="logo-icon"></span>
-            <span className="logo-text">The Drone Post</span>
+            <img src={Logo_wide} alt="The Drone Post" className="logo-image" />
+            {/* <img src={Logo_white_bg} alt="The Drone Post" className="logo-image" /> */}
           </a>
         </div>
         
