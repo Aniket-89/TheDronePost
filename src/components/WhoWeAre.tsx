@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { CheckCircle, Zap, Shield, Target, Cpu } from 'lucide-react';
 
 const WhoWeAre: React.FC = () => {
-  const [hoveredItem, setHoveredItem] = useState<number | null>(null);
 
   const features = [
     {
@@ -84,8 +83,7 @@ const WhoWeAre: React.FC = () => {
                 <div
                   key={index}
                   className="group relative p-6 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 cursor-pointer"
-                  onMouseEnter={() => setHoveredItem(index)}
-                  onMouseLeave={() => setHoveredItem(null)}
+
                 >
                   <div className="flex items-center gap-4">
                     <div className="flex-shrink-0 p-3 rounded-lg bg-secondary/10 text-secondary group-hover:bg-secondary group-hover:text-primary transition-colors">
@@ -98,9 +96,7 @@ const WhoWeAre: React.FC = () => {
                         <h4 className="font-semibold text-lg">{feature.title}</h4>
                       </div>
                       
-                      <div className={`overflow-hidden transition-all duration-300 ${
-                        hoveredItem === index ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'
-                      }`}>
+                      <div className={`overflow-hidden transition-all duration-300`}>
                         <p className="text-gray-400 font-mono text-sm">
                           {feature.detail}
                         </p>

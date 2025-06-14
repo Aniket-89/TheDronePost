@@ -89,7 +89,7 @@ const FeaturedContent: React.FC = () => {
           {articles.map((article, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-80 terminal-window rounded-lg p-6 pt-12 group hover:scale-105 transition-all duration-300 cursor-pointer"
+              className="flex-shrink-0 w-80 terminal-window rounded-lg p-6 pt-12 group cursor-pointer"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between text-xs">

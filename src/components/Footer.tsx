@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
                   <div className="w-8 h-8 border-2 border-primary rounded rotate-45"></div>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold font-space text-secondary">AERONAUTICS</h3>
+                  <h3 className="text-2xl font-bold font-space text-secondary">TheDronePost</h3>
                   <div className="text-xs font-mono text-gray-500">ADVANCED_UAV_SOLUTIONS</div>
                 </div>
               </div>
@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-3 text-gray-400">
                   <Mail className="w-4 h-4 text-secondary" />
-                  <span className="font-mono">contact@aeronautics.ai</span>
+                  <span className="font-mono">contact@TheDronePost.ai</span>
                 </div>
               </div>
             </div>
@@ -133,7 +133,7 @@ const Footer: React.FC = () => {
             {/* Copyright with Powered By */}
             <div className="text-gray-500 font-mono text-sm flex items-center gap-4">
               <div>
-                <span className="text-secondary">$</span> Copyright © {currentYear} Aeronautics Inc.
+                <span className="text-secondary">$</span> Copyright © {currentYear} TheDronePost Inc.
               </div>
               <div className="flex items-center gap-2 text-xs">
                 <span>Powered by</span>

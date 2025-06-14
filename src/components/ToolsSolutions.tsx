@@ -95,9 +95,7 @@ const ToolsSolutions: React.FC = () => {
                   {solution.description}
                 </p>
                 
-                <div className={`overflow-hidden transition-all duration-500 ${
-                  hoveredCard === index ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'
-                }`}>
+                <div className={`overflow-hidden transition-all duration-500`}>
                   <div className="pt-4 border-t border-secondary/20">
                     <p className="text-xs text-gray-500 font-mono leading-relaxed">
                       {solution.details}

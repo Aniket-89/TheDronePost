@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
   const [typedText, setTypedText] = useState('');
@@ -22,7 +22,10 @@ const HeroSection: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Tech Grid Background */}
-      <div className="absolute inset-0 tech-grid opacity-20"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/80 to-primary/50 z-10"></div>
+      
+      {/* Tech Grid Overlay */}
+      <div className="absolute inset-0 tech-grid opacity-90"></div>
       
       {/* Animated Drone Wireframe */}
       <div className="absolute inset-0 flex items-center justify-center">
@@ -56,7 +59,7 @@ const HeroSection: React.FC = () => {
         <div className="mb-8">
           <h1 className="text-6xl md:text-8xl font-bold font-space mb-6">
             <span className="bg-gradient-to-r from-white to-secondary bg-clip-text text-transparent">
-              AERONAUTICS
+              TheDronePost
             </span>
           </h1>
           <div className="h-12 flex items-center justify-center">
@@ -78,8 +81,8 @@ const HeroSection: React.FC = () => {
           </button>
           
           <button className="group border-2 border-secondary text-secondary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-secondary hover:text-primary transition-all duration-300 flex items-center gap-3">
-            <Play className="w-5 h-5" />
-            Watch Demo
+            <Download className="w-5 h-5" />
+            Get Free Guide
           </button>
         </div>
       </div>

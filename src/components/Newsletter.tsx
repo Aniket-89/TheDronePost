@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, CheckCircle, Terminal, Zap } from 'lucide-react';
+import { CheckCircle, Terminal, Zap } from 'lucide-react';
 
 const Newsletter: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -59,7 +59,7 @@ const Newsletter: React.FC = () => {
                 <div className="max-w-lg mx-auto">
                   <div className={`terminal-input-wrapper ${isFocused ? 'focused' : ''}`}>
                     <div className="terminal-line">
-                      <span className="terminal-prompt">user@aeronautics:~$</span>
+                      <span className="terminal-prompt">user@thedronepost:~$</span>
                       <span className="terminal-command">subscribe --email=</span>
                       <input
                         type="email"
@@ -113,7 +113,7 @@ const Newsletter: React.FC = () => {
               
               <div className="font-mono text-sm space-y-2 text-gray-300">
                 <div className="text-secondary">$ subscription_confirmed --status=active</div>
-                <div>{'>'} Welcome to the Aeronautics network</div>
+                <div>{'>'} Welcome to the TheDronePost network</div>
                 <div>{'>'} Weekly updates: ENABLED</div>
                 <div>{'>'} Priority notifications: ACTIVE</div>
                 <div>{'>'} Encryption level: MAXIMUM</div>

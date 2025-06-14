@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Zap, Shield, Radio, Activity, Wifi, Satellite } from 'lucide-react';
+import { Menu, X, Zap, Book, Radio, Monitor, Activity, Wifi, Satellite } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -59,10 +59,10 @@ const Header: React.FC = () => {
 
   const navItems = [
     { name: 'Solutions', href: '#solutions', icon: <Zap className="w-4 h-4" /> },
-    { name: 'Technology', href: '#technology', icon: <Shield className="w-4 h-4" /> },
-    { name: 'About', href: '#about', icon: <Radio className="w-4 h-4" /> },
-    { name: 'Careers', href: '#careers' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Blogs', href: '#technology', icon: <Book className="w-4 h-4" /> },
+    { name: 'About', href: '#about', icon: <Monitor className="w-4 h-4" /> },
+    // { name: 'Careers', href: '#careers' },
+    { name: 'Contact', href: '#contact', icon: <Radio className="w-4 h-4" /> }
   ];
 
   return (
@@ -114,7 +114,7 @@ const Header: React.FC = () => {
               <div className="w-6 h-6 border-2 border-primary rounded rotate-45"></div>
             </div>
             <div>
-              <h1 className="text-xl font-bold font-space text-secondary">AERONAUTICS</h1>
+              <h1 className="text-xl font-bold font-space text-secondary">TheDronePost</h1>
               <div className="text-xs font-mono text-gray-500">UAV_SYSTEMS_v2.1</div>
             </div>
           </div>
