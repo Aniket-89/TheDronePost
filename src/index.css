@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #0A0A0A;
+    color: #ffffff;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .tech-grid {
+    background-image: 
+      linear-gradient(rgba(20, 241, 149, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20, 241, 149, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: grid-fade 3s ease-in-out infinite;
+  }
+  
+  .neon-glow {
+    box-shadow: 0 0 20px rgba(20, 241, 149, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .neon-glow:hover {
+    box-shadow: 0 0 40px rgba(20, 241, 149, 0.6);
+    transform: translateY(-2px);
+  }
+  
+  .terminal-window {
+    background: linear-gradient(135deg, #1A1A1A 0%, #0A0A0A 100%);
+    border: 1px solid rgba(20, 241, 149, 0.2);
+    position: relative;
+  }
+  
+  .terminal-window::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: linear-gradient(90deg, #ff5f57, #ffbd2e, #28ca42);
+    background-size: 60px 20px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    border-bottom: 1px solid rgba(20, 241, 149, 0.2);
+  }
+  
+  /* Terminal Input Styles */
+  .terminal-input-wrapper {
+    background: #0A0A0A;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    transition: all 0.3s ease;
+  }
+  
+  .terminal-input-wrapper.focused {
+    border-color: #14F195;
+    box-shadow: 0 0 20px rgba(20, 241, 149, 0.2);
+  }
+  
+  .terminal-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #14F195;
+    font-size: 14px;
+  }
+  
+  .terminal-prompt {
+    color: #14F195;
+    font-weight: 600;
+  }
+  
+  .terminal-command {
+    color: #888;
+  }
+  
+  .terminal-email-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .terminal-email-input::placeholder {
+    color: #555;
+  }
+  
+  .terminal-cursor {
+    color: #14F195;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+  }
+  
+  .terminal-cursor.visible {
+    opacity: 1;
+  }
+  
+  .typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #14F195;
+    animation: type 4s steps(40) infinite;
+  }
+  
+  .particle-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .particle-effect::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(20, 241, 149, 0.8) 0%, transparent 70%);
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%);
+  }
+  
+  .particle-effect:hover::after {
+    width: 200px;
+    height: 200px;
+  }
+  
+  /* LED Switch Effects */
+  .led-switch {
+    position: relative;
+  }
+  
+  .led-switch:hover {
+    text-shadow: 0 0 10px rgba(20, 241, 149, 0.5);
+  }
+  
+  .led-button {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .led-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(20, 241, 149, 0.3);
+  }
+  
+  .led-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(20, 241, 149, 0.2), transparent);
+    transition: left 0.5s ease;
+  }
+  
+  .led-button:hover::before {
+    left: 100%;
+  }
+}
+
+.scroll-container {
+  scrollbar-width: thin;
+  scrollbar-color: #14F195 #1A1A1A;
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #14F195;
+  border-radius: 3px;
+}
