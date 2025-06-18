@@ -53,18 +53,18 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-gradient-to-b from-accent to-primary border-t border-secondary/20">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Main Footer Content */}
-        <div className="py-16">
-          <div className="grid lg:grid-cols-6 gap-12">
+        <div className="py-12 sm:py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12">
             {/* Company Info */}
-            <div className="lg:col-span-2">
+            <div className="sm:col-span-2 lg:col-span-2">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-secondary to-secondary/60 flex items-center justify-center">
-                  <div className="w-8 h-8 border-2 border-primary rounded rotate-45"></div>
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-secondary to-secondary/60 flex items-center justify-center">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 border-2 border-primary rounded rotate-45"></div>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold font-space text-secondary">TheDronePost</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold font-space text-secondary">TheDronePost</h3>
                   <div className="text-xs font-mono text-gray-500">ADVANCED_UAV_SOLUTIONS</div>
                 </div>
               </div>
@@ -77,24 +77,24 @@ const Footer: React.FC = () => {
               {/* Contact Info */}
               <div className="space-y-3 text-sm">
                 <div className="flex items-center gap-3 text-gray-400">
-                  <MapPin className="w-4 h-4 text-secondary" />
+                  <MapPin className="w-4 h-4 text-secondary flex-shrink-0" />
                   <span className="font-mono">San Francisco, CA | Remote Operations</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-400">
-                  <Phone className="w-4 h-4 text-secondary" />
+                  <Phone className="w-4 h-4 text-secondary flex-shrink-0" />
                   <span className="font-mono">+1 (555) 123-AERO</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-400">
-                  <Mail className="w-4 h-4 text-secondary" />
-                  <span className="font-mono">contact@TheDronePost.ai</span>
+                  <Mail className="w-4 h-4 text-secondary flex-shrink-0" />
+                  <span className="font-mono break-all">contact@TheDronePost.ai</span>
                 </div>
               </div>
             </div>
 
             {/* Footer Links with LED Switch Effects */}
             {footerSections.map((section, index) => (
-              <div key={index}>
-                <h4 className="text-lg font-bold font-space text-secondary mb-6 flex items-center gap-2">
+              <div key={index} className="sm:col-span-1">
+                <h4 className="text-base sm:text-lg font-bold font-space text-secondary mb-4 sm:mb-6 flex items-center gap-2">
                   <div className="w-2 h-2 bg-secondary rounded-full animate-pulse"></div>
                   {section.title}
                 </h4>
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
                         onMouseEnter={() => setHoveredSwitch(link.id)}
                         onMouseLeave={() => setHoveredSwitch(null)}
                       >
-                        <div className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        <div className={`w-2 h-2 rounded-full transition-all duration-300 flex-shrink-0 ${
                           hoveredSwitch === link.id 
                             ? 'bg-secondary shadow-lg shadow-secondary/50 scale-125' 
                             : 'bg-gray-600'
@@ -115,7 +115,7 @@ const Footer: React.FC = () => {
                         <span className="group-hover:translate-x-1 transition-transform duration-300">
                           {link.name}
                         </span>
-                        <ExternalLink className={`w-3 h-3 transition-all duration-300 ${
+                        <ExternalLink className={`w-3 h-3 transition-all duration-300 flex-shrink-0 ${
                           hoveredSwitch === link.id ? 'opacity-100 text-secondary' : 'opacity-0'
                         }`} />
                       </a>
@@ -128,10 +128,10 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-8 border-t border-secondary/20">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="py-6 sm:py-8 border-t border-secondary/20">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             {/* Copyright with Powered By */}
-            <div className="text-gray-500 font-mono text-sm flex items-center gap-4">
+            <div className="text-gray-500 font-mono text-sm flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
               <div>
                 <span className="text-secondary">$</span> Copyright © {currentYear} TheDronePost Inc.
               </div>
@@ -171,12 +171,12 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Legal Links */}
-            <div className="flex items-center gap-6 text-sm font-mono">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm font-mono">
               {['Privacy Policy', 'Terms of Service', 'Security'].map((item, index) => (
                 <a 
                   key={index}
                   href="#" 
-                  className="text-gray-500 hover:text-secondary transition-colors relative group"
+                  className="text-gray-500 hover:text-secondary transition-colors relative group whitespace-nowrap"
                   onMouseEnter={() => setHoveredSwitch(`legal-${index}`)}
                   onMouseLeave={() => setHoveredSwitch(null)}
                 >
@@ -194,7 +194,7 @@ const Footer: React.FC = () => {
 
         {/* Terminal Status Bar */}
         <div className="py-4 border-t border-secondary/10">
-          <div className="flex items-center justify-center gap-8 text-xs font-mono text-gray-600">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs font-mono text-gray-600">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-secondary rounded-full animate-pulse"></div>
               <span>SYSTEMS: ONLINE</span>

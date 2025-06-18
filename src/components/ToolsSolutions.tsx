@@ -62,34 +62,34 @@ const ToolsSolutions: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 px-6 bg-primary">
+    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-primary">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold font-space mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-space mb-4 sm:mb-6">
             TOOLS & <span className="text-secondary">SOLUTIONS</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-base sm:text-xl text-gray-400 max-w-3xl mx-auto px-4">
             Comprehensive UAV solutions engineered for mission-critical applications 
             across defense, commercial, and industrial sectors.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {solutions.map((solution, index) => (
             <div
               key={index}
-              className="group relative terminal-window rounded-lg p-8 pt-12 cursor-pointer transition-all duration-300 hover:scale-105"
+              className="group relative terminal-window rounded-lg p-6 sm:p-8 pt-12 cursor-pointer transition-all duration-300 hover:scale-105"
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
             >
               <div className="flex flex-col items-center text-center space-y-4">
-                <div className="p-4 rounded-lg border-2 border-secondary/20 group-hover:border-secondary transition-colors">
+                <div className="p-3 sm:p-4 rounded-lg border-2 border-secondary/20 group-hover:border-secondary transition-colors">
                   <div className="text-secondary group-hover:scale-110 transition-transform">
                     {solution.icon}
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-bold font-space">{solution.title}</h3>
+                <h3 className="text-lg sm:text-xl font-bold font-space">{solution.title}</h3>
                 
                 <p className="text-gray-400 text-sm leading-relaxed">
                   {solution.description}
@@ -112,8 +112,8 @@ const ToolsSolutions: React.FC = () => {
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <button className="group bg-gradient-to-r from-secondary to-secondary/80 text-primary px-8 py-4 rounded-lg font-bold text-lg particle-effect inline-flex items-center gap-3 hover:scale-105 transition-transform">
+        <div className="text-center mt-12 sm:mt-16">
+          <button className="group bg-gradient-to-r from-secondary to-secondary/80 text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg particle-effect inline-flex items-center gap-3 hover:scale-105 transition-transform">
             Explore More Solutions
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>

@@ -6,7 +6,7 @@ const FeaturedContent: React.FC = () => {
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
-      const scrollAmount = 400;
+      const scrollAmount = 320;
       scrollRef.current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth'
@@ -53,14 +53,14 @@ const FeaturedContent: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 px-6 bg-gradient-to-b from-accent to-primary">
+    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-gradient-to-b from-accent to-primary">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center mb-16">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 sm:mb-16 gap-6">
           <div>
-            <h2 className="text-5xl font-bold font-space mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-space mb-4">
               FEATURED <span className="text-secondary">CONTENT</span>
             </h2>
-            <p className="text-gray-400 text-lg">
+            <p className="text-gray-400 text-base sm:text-lg">
               Latest insights and developments in UAV technology
             </p>
           </div>
@@ -83,13 +83,13 @@ const FeaturedContent: React.FC = () => {
 
         <div 
           ref={scrollRef}
-          className="flex gap-8 overflow-x-auto scroll-container pb-4"
+          className="flex gap-6 sm:gap-8 overflow-x-auto scroll-container pb-4"
           style={{ scrollbarWidth: 'thin' }}
         >
           {articles.map((article, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-80 terminal-window rounded-lg p-6 pt-12 group cursor-pointer"
+              className="flex-shrink-0 w-72 sm:w-80 terminal-window rounded-lg p-4 sm:p-6 pt-12 group cursor-pointer"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between text-xs">
@@ -99,7 +99,7 @@ const FeaturedContent: React.FC = () => {
                   <span className="text-gray-500 font-mono">{article.date}</span>
                 </div>
                 
-                <h3 className="text-xl font-bold font-space leading-tight group-hover:text-secondary transition-colors">
+                <h3 className="text-lg sm:text-xl font-bold font-space leading-tight group-hover:text-secondary transition-colors">
                   {article.title}
                 </h3>
                 

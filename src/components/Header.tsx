@@ -61,7 +61,6 @@ const Header: React.FC = () => {
     { name: 'Solutions', href: '#solutions', icon: <Zap className="w-4 h-4" /> },
     { name: 'Blogs', href: '#technology', icon: <Book className="w-4 h-4" /> },
     { name: 'About', href: '#about', icon: <Monitor className="w-4 h-4" /> },
-    // { name: 'Careers', href: '#careers' },
     { name: 'Contact', href: '#contact', icon: <Radio className="w-4 h-4" /> }
   ];
 
@@ -71,51 +70,54 @@ const Header: React.FC = () => {
         ? 'bg-primary/95 backdrop-blur-md border-b border-secondary/20' 
         : 'bg-transparent'
     }`}>
-      {/* Telemetry Bar */}
-      <div className="bg-accent/50 border-b border-secondary/10">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* Telemetry Bar - Hidden on mobile */}
+      <div className="bg-accent/50 border-b border-secondary/10 hidden md:block">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-8 text-xs font-mono">
-            <div className="flex items-center gap-6 text-gray-400">
+            <div className="flex items-center gap-3 sm:gap-6 text-gray-400">
               <div className="flex items-center gap-2">
                 <div className={`w-2 h-2 rounded-full transition-all duration-200 ${
                   telemetryPulse ? 'bg-secondary shadow-lg shadow-secondary/50' : 'bg-secondary/50'
                 }`}></div>
-                <span>TELEMETRY</span>
+                <span className="hidden sm:inline">TELEMETRY</span>
+                <span className="sm:hidden">TEL</span>
               </div>
               <div className="flex items-center gap-2">
                 <Activity className="w-3 h-3 text-secondary" />
-                <span>UPTIME: {formatUptime(uptime)}</span>
+                <span className="hidden sm:inline">UPTIME: {formatUptime(uptime)}</span>
+                <span className="sm:hidden">{formatUptime(uptime)}</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="hidden lg:flex items-center gap-2">
                 <Wifi className="w-3 h-3 text-secondary" />
                 <span>SIGNAL: 98.7%</span>
               </div>
             </div>
             
-            <div className="flex items-center gap-6 text-gray-400">
-              <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3 sm:gap-6 text-gray-400">
+              <div className="hidden sm:flex items-center gap-2">
                 <Satellite className="w-3 h-3 text-secondary" />
-                <span>GPS: LOCKED</span>
+                <span className="hidden lg:inline">GPS: LOCKED</span>
+                <span className="lg:hidden">GPS</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-secondary rounded-full animate-pulse"></div>
-                <span className="text-secondary">{systemStatus}</span>
+                <span className="text-secondary text-xs sm:text-sm">{systemStatus}</span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-secondary to-secondary/60 flex items-center justify-center">
-              <div className="w-6 h-6 border-2 border-primary rounded rotate-45"></div>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-secondary to-secondary/60 flex items-center justify-center">
+              <div className="w-4 h-4 sm:w-6 sm:h-6 border-2 border-primary rounded rotate-45"></div>
             </div>
             <div>
-              <h1 className="text-xl font-bold font-space text-secondary">TheDronePost</h1>
-              <div className="text-xs font-mono text-gray-500">UAV_SYSTEMS_v2.1</div>
+              <h1 className="text-lg sm:text-xl font-bold font-space text-secondary">TheDronePost</h1>
+              <div className="text-xs font-mono text-gray-500 hidden sm:block">UAV_SYSTEMS_v2.1</div>
             </div>
           </div>
 
@@ -134,9 +136,9 @@ const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA Button - Hidden on mobile */}
           <div className="hidden lg:flex items-center gap-4">
-            <button className="px-6 py-2 border border-secondary/30 text-secondary hover:bg-secondary hover:text-primary transition-all duration-300 rounded-lg font-mono text-sm hover:shadow-lg hover:shadow-secondary/20">
+            <button className="px-4 xl:px-6 py-2 border border-secondary/30 text-secondary hover:bg-secondary hover:text-primary transition-all duration-300 rounded-lg font-mono text-sm hover:shadow-lg hover:shadow-secondary/20">
               Initialize Contact
             </button>
           </div>
